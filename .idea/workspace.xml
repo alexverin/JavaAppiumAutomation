@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed639ff2-7ffa-411e-bef0-54b1224dd624" name="Default Changelist" comment="" />
+    <list default="true" id="ed639ff2-7ffa-411e-bef0-54b1224dd624" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAppiumAutomation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaAppiumAutomation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/FirstTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/FirstTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,15 +19,17 @@
     <session id="-1731916012">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="665" />
+          <entry key="java" value="672" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -38,7 +46,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="665" />
+          <entry key="JAVA" value="672" />
         </counts>
       </usages-collector>
     </session>
@@ -57,12 +65,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="249">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1199#1200#0" expanded="true" />
-                <element signature="e#1228#1229#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,6 +82,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -95,7 +104,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -132,7 +141,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,12 +222,24 @@
     <history-entry file="FirstTest - 2018.09.06 at 10h 24m 06s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FirstTest - 2018.09.14 at 16h 00m 35s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest - 2018.09.14 at 16h 02m 06s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest - 2018.09.14 at 16h 15m 34s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest - 2018.09.14 at 16h 21m 23s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="43" width="1379" height="837" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25355273" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26103216" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -259,12 +280,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="249">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1199#1200#0" expanded="true" />
-            <element signature="e#1228#1229#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -334,7 +353,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>java-client-4.1.2</last-edited>
+          <last-edited>junit-4.10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
