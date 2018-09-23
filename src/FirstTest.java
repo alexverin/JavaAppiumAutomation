@@ -1,5 +1,4 @@
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDeviceActionShortcuts;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Before;
@@ -7,15 +6,13 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.beans.DesignMode;
 import java.net.URL;
-import java.sql.Driver;
 
 public class FirstTest {
+
     private AppiumDriver driver;
 
     @Before
-
     public void setUp() throws Exception
     {
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -41,7 +38,7 @@ public class FirstTest {
     @Test
     public void firstTest()
     {
-       WebElement element = driver.findElementByXPath("//*[contains(@text, 'Search Wikipedia')]");
+        WebElement element = driver.findElementByXPath("//*[contains(@text, 'Search Wikipedia')]");
         element.click();
     }
 }
