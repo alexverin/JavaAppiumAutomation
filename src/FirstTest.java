@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
+import java.util.List;
 
 public class FirstTest {
 
@@ -38,7 +39,10 @@ public class FirstTest {
     @Test
     public void firstTest()
     {
-        WebElement element = driver.findElementByXPath("//*[contains(@text, 'Search Wikipedia')]");
-        element.click();
+        WebElement element_to_init_search = driver.findElementByXPath("//*[contains(@text, 'Search Wikipedia')]");
+        element_to_init_search.click();
+
+        WebElement element_to_enter_search_line = driver.findElementByXPath("//*[contains(@text, 'Search…')]");
+        element_to_enter_search_line.sendKeys("Appium   ");
     }
 }
