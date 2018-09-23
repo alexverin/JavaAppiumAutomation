@@ -43,6 +43,5 @@ public class FirstTest {
     {
        WebElement element = driver.findElementByXPath("//*[contains(@text, 'Search Wikipedia')]");
         element.click();
-//        System.out.println("First test run");
     }
 }
