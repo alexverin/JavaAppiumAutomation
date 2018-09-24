@@ -47,8 +47,7 @@ public class FirstTest {
 
         WebElement element_to_enter_search_line = waitForElementPresentByXpath(
                 "//*[contains(@text, 'Search…')]",
-                "Can't find search input",
-                5
+                "Can't find search input"
         );
 
         element_to_enter_search_line.sendKeys("Appium");
@@ -61,7 +60,9 @@ public class FirstTest {
         return wait.until(
                 ExpectedConditions.presenceOfElementLocated(by)
         );
-
-
+    }
+    private WebElement waitForElementPresentByXpath(String xpath,String error_message)
+    {
+       return waitForElementPresentByXpath(xpath, error_message, 5);
     }
 }
