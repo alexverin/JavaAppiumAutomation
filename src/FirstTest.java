@@ -37,59 +37,21 @@ public class FirstTest {
         driver.quit();
     }
 
-    @Test
-    public void Ex3TestCancelSearch()
-    {
+        @Test
+        public void firstTest()
+        {
+            waitForElementAndClick(
+                    By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                    "Can't find 'Search Wikipedia' input",
+                    5
+            );
+            waitForElementPresent(
+                    By.xpath("//*[contains(@text, 'Search…')]"),
+                    "Can't find search input",
+                    15
+            );
+     }
 
-        waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Can't find 'Search Wikipedia' input",
-                5
-        );
-
-        waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "alien",
-                "Can't find search input",
-                5
-        );
-
-        waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Science fiction horror film series; franchise']"),
-                "Can't find 'Science fiction horror film series; franchise' topic searching by 'alien'",
-                15
-        );
-        waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='1979 British-American science-fiction horror film by Ridley Scott']"),
-                "Can't find '1979 British-American science-fiction horror film by Ridley Scott' topic searching by 'alien'",
-                15
-        );
-
-        waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Fictional extraterrestrial species from the Alien film series']"),
-                "Can't find 'Fictional extraterrestrial species from the Alien film series' topic searching by 'alien'",
-                15
-        );
-
-        waitForElementAndClear(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Can't find search field",
-                5
-        );
-
-        waitForElementAndClick(
-                By.id("org.wikipedia:id/search_close_btn"),
-                "Can't find X button to cancel search",
-                5
-        );
-
-        waitForElementPresent(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Can't find search input",
-                15
-        );
-    }
-    //
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -98,24 +60,10 @@ public class FirstTest {
                 ExpectedConditions.presenceOfElementLocated(by)
         );
     }
-
     private WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds)
     {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.click();
-        return element;
-    }
-
-    private WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeoutInSeconds) {
-        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
-        element.sendKeys(value);
-        return element;
-    }
-
-    private WebElement waitForElementAndClear(By by, String error_message, long timeoutInSeconds)
-    {
-        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
-        element.clear();
         return element;
     }
 }
