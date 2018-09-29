@@ -194,9 +194,10 @@ public class FirstTest {
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
-        return wait.until(
+        Boolean success = wait.until(
                 ExpectedConditions.invisibilityOfElementLocated(by)
         );
+        return success;
     }
 
     private WebElement waitForElementAndClear(By by, String error_message, long timeoutInSeconds)
