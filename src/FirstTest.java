@@ -39,26 +39,26 @@ public class FirstTest {
         driver.quit();
     }
 
-        @Test
-        public void firstTest()
-        {
-            waitForElementAndClick(
-                    By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                    "Can't find 'Search Wikipedia' input",
-                    5
-            );
-            waitForElementAndSendKeys(
-                    By.xpath("//*[contains(@text, 'Search…')]"),
-                    "Java",
-                    "Can't find search input",
-                    5
-            );
-            waitForElementPresent(
-                    By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                    "Can't find 'Object-oriented programming language' topic searching by 'Java'",
-                    15
-            );
-     }
+    @Test
+    public void firstTest()
+    {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                "Can't find 'Search Wikipedia' input",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text, 'Search…')]"),
+                "Java",
+                "Can't find search input",
+                5
+        );
+        waitForElementPresent(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Can't find 'Object-oriented programming language' topic searching by 'Java'",
+                15
+        );
+    }
 
     @Test
     public void testCancelSearch()
@@ -144,14 +144,14 @@ public class FirstTest {
 
         waitForElementAndSendKeys(
                 By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
+                "Appium",
                 "Can't find search input",
                 5
         );
 
         waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Can't find 'Search Wikipedia' input",
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_title'][@text='Appium']"),
+                "Can't find 'Appium' in search input",
                 5
         );
 
@@ -160,11 +160,11 @@ public class FirstTest {
                 "Can't find article title",
                 15
         );
-        swipeUp(200);
-        swipeUp(200);
-        swipeUp(200);
-        swipeUp(200);
-        swipeUp(200);
+        SwipeUptoFindElement(
+              By.xpath("//*[@text='View page in browser']"),
+                "Cannot find the end of article",
+                20
+        );
     }
 
 
@@ -194,10 +194,9 @@ public class FirstTest {
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
-        Boolean success = wait.until(
+        return wait.until(
                 ExpectedConditions.invisibilityOfElementLocated(by)
         );
-        return success;
     }
 
     private WebElement waitForElementAndClear(By by, String error_message, long timeoutInSeconds)
@@ -208,7 +207,7 @@ public class FirstTest {
     }
     protected void swipeUp(int timeOfSwipe)
     {
-        TouchAction action = new TouchAction(driver);
+        TouchAction action = new TouchAction (driver);
         Dimension size = driver.manage().window().getSize();
         int x = size.width / 2;
         int start_y = (int) (size.height * 0.8);
@@ -216,12 +215,23 @@ public class FirstTest {
 
         action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x, end_y).release().perform();
     }
+    protected void SwipeUpQuick()
+    {
+        swipeUp(200);
+    }
+    protected void SwipeUptoFindElement(By by, String error_message, int max_swipes)
+    {
+        int already_swiped = 0;
+        while (driver.findElements(by).size() == 0)
+        {
+            if (already_swiped > max_swipes)
+            {
+                waitForElementPresent(by, "Cannot find element by swiping up. \n" + error_message, 0);
+                return;
+            }
+
+            SwipeUpQuick();
+            ++already_swiped;
+        }
+    }
 }
-
-
-
-
-
-
-
-
