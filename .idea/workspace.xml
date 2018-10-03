@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed639ff2-7ffa-411e-bef0-54b1224dd624" name="Default Changelist" comment="08. Объединение методов поиска">
-      <change afterPath="$PROJECT_DIR$/src/hw_ex3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hw_ex4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/temp.java" afterDir="false" />
+    <list default="true" id="ed639ff2-7ffa-411e-bef0-54b1224dd624" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/FirstTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/FirstTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,7 +30,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3487" />
+          <entry key="java" value="6194" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -51,7 +48,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3487" />
+          <entry key="JAVA" value="6194" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -68,15 +66,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-581">
-              <caret line="136" column="24" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+            <state relative-caret-position="93">
+              <caret line="303" column="41" selection-start-line="303" selection-start-column="41" selection-end-line="303" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1368#1369#0" expanded="true" />
                 <element signature="e#1397#1398#0" expanded="true" />
+                <element signature="e#7044#7045#0" expanded="true" />
+                <element signature="e#7069#7070#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,40 +94,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hw_ex3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
+            <state relative-caret-position="176">
               <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1401#1402#0" expanded="true" />
                 <element signature="e#1430#1431#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hw_ex4.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="86" column="56" selection-start-column="2" selection-end-line="100" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/temp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-174">
-              <caret line="57" column="24" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1340#1341#0" expanded="true" />
-                <element signature="e#1369#1370#0" expanded="true" />
-                <element signature="e#6765#6766#0" expanded="true" />
-                <element signature="e#6799#6800#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,10 +130,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/hw_ex2.java" />
-        <option value="$PROJECT_DIR$/src/FirstTest.java" />
         <option value="$PROJECT_DIR$/src/hw_ex3.java" />
         <option value="$PROJECT_DIR$/src/hw_ex4.java" />
         <option value="$PROJECT_DIR$/src/temp.java" />
+        <option value="$PROJECT_DIR$/src/FirstTest.java" />
       </list>
     </option>
   </component>
@@ -212,7 +187,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538224956000" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538549750140" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -230,7 +205,37 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FirstTest.testSwipeArticle">
+  <component name="RunManager" selected="JUnit.FirstTest.testAmountOfEmptySearch">
+    <configuration name="FirstTest.saveFirstArticleToMyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FirstTest" />
+      <option name="METHOD_NAME" value="saveFirstArticleToMyList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FirstTest.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FirstTest" />
+      <option name="METHOD_NAME" value="testAmountOfEmptySearch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FirstTest.testAmountOfNotEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FirstTest" />
+      <option name="METHOD_NAME" value="testAmountOfNotEmptySearch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FirstTest.testSwipeArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
@@ -251,50 +256,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="hw_ex4.testCancelResultOfSearchSeveralArticles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="hw_ex4" />
-      <option name="METHOD_NAME" value="testCancelResultOfSearchSeveralArticles" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="temp.Task_4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="temp" />
-      <option name="METHOD_NAME" value="Task_4" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="temp.testSearchResultsValidation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="temp" />
-      <option name="METHOD_NAME" value="testSearchResultsValidation" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.hw_ex4.testCancelResultOfSearchSeveralArticles" />
       <item itemvalue="JUnit.hw_ex3.testCancelResultOfSearchSeveralArticles" />
-      <item itemvalue="JUnit.temp.Task_4" />
-      <item itemvalue="JUnit.temp.testSearchResultsValidation" />
       <item itemvalue="JUnit.FirstTest.testSwipeArticle" />
+      <item itemvalue="JUnit.FirstTest.saveFirstArticleToMyList" />
+      <item itemvalue="JUnit.FirstTest.testAmountOfNotEmptySearch" />
+      <item itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
+        <item itemvalue="JUnit.FirstTest.testAmountOfNotEmptySearch" />
+        <item itemvalue="JUnit.FirstTest.saveFirstArticleToMyList" />
         <item itemvalue="JUnit.FirstTest.testSwipeArticle" />
         <item itemvalue="JUnit.hw_ex3.testCancelResultOfSearchSeveralArticles" />
-        <item itemvalue="JUnit.temp.testSearchResultsValidation" />
-        <item itemvalue="JUnit.hw_ex4.testCancelResultOfSearchSeveralArticles" />
-        <item itemvalue="JUnit.temp.Task_4" />
       </list>
     </recent_temporary>
   </component>
@@ -358,39 +333,60 @@
       <option name="project" value="LOCAL" />
       <updated>1537806676898</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="02. Swipe till element found: swipeQuick, counter,...">
+      <created>1538375596132</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1538375596132</updated>
+    </task>
+    <task id="LOCAL-00009" summary="03. Save first article: overlay, swipe left, variable&#10;04. Swipe: debugging">
+      <created>1538404642982</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1538404642982</updated>
+    </task>
+    <task id="LOCAL-00010" summary="05. Assert: basics">
+      <created>1538548525536</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1538548525536</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="hw_ex4_testCancelResultOfSearchSeveralArticles - 2018.09.29 at 15h 05m 08s.xml">
-      <configuration name="hw_ex4.testCancelResultOfSearchSeveralArticles" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.01 at 16h 07m 13s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="hw_ex4_testCancelResultOfSearchSeveralArticles - 2018.09.29 at 15h 05m 53s.xml">
-      <configuration name="hw_ex4.testCancelResultOfSearchSeveralArticles" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.01 at 17h 12m 04s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="temp_Task_4 - 2018.09.29 at 15h 15m 27s.xml">
-      <configuration name="temp.Task_4" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.01 at 17h 16m 41s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="temp_Task_4 - 2018.09.29 at 15h 18m 39s.xml">
-      <configuration name="temp.Task_4" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.01 at 17h 20m 00s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="hw_ex4_testCancelResultOfSearchSeveralArticles - 2018.09.29 at 15h 19m 19s.xml">
-      <configuration name="hw_ex4.testCancelResultOfSearchSeveralArticles" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.01 at 17h 24m 07s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="hw_ex4_testCancelResultOfSearchSeveralArticles - 2018.09.29 at 15h 20m 41s.xml">
-      <configuration name="hw_ex4.testCancelResultOfSearchSeveralArticles" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.01 at 17h 34m 47s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="hw_ex4_testCancelResultOfSearchSeveralArticles - 2018.09.29 at 15h 22m 10s.xml">
-      <configuration name="hw_ex4.testCancelResultOfSearchSeveralArticles" configurationId="JUnit" />
+    <history-entry file="FirstTest_testAmountOfNotEmptySearch - 2018.10.03 at 09h 31m 00s.xml">
+      <configuration name="FirstTest.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="temp_testSearchResultsValidation - 2018.09.29 at 15h 37m 24s.xml">
-      <configuration name="temp.testSearchResultsValidation" configurationId="JUnit" />
+    <history-entry file="FirstTest_testAmountOfNotEmptySearch - 2018.10.03 at 09h 34m 00s.xml">
+      <configuration name="FirstTest.testAmountOfNotEmptySearch" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="temp_testSearchResultsValidation - 2018.09.29 at 15h 38m 03s.xml">
-      <configuration name="temp.testSearchResultsValidation" configurationId="JUnit" />
+    <history-entry file="FirstTest_testAmountOfEmptySearch - 2018.10.03 at 09h 53m 09s.xml">
+      <configuration name="FirstTest.testAmountOfEmptySearch" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="hw_ex3_testCancelResultOfSearchSeveralArticles - 2018.09.29 at 15h 39m 23s.xml">
-      <configuration name="hw_ex3.testCancelResultOfSearchSeveralArticles" configurationId="JUnit" />
+    <history-entry file="FirstTest_testAmountOfEmptySearch - 2018.10.03 at 09h 55m 27s.xml">
+      <configuration name="FirstTest.testAmountOfEmptySearch" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -472,7 +468,10 @@
     <MESSAGE value="06. Рефакторинг ожиданий" />
     <MESSAGE value="07. ID и Not Present" />
     <MESSAGE value="08. Объединение методов поиска" />
-    <option name="LAST_COMMIT_MESSAGE" value="08. Объединение методов поиска" />
+    <MESSAGE value="02. Swipe till element found: swipeQuick, counter,..." />
+    <MESSAGE value="03. Save first article: overlay, swipe left, variable&#10;04. Swipe: debugging" />
+    <MESSAGE value="05. Assert: basics" />
+    <option name="LAST_COMMIT_MESSAGE" value="05. Assert: basics" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/JavaAppiumAutomation.iml">
@@ -484,12 +483,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-581">
-          <caret line="136" column="24" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+        <state relative-caret-position="93">
+          <caret line="303" column="41" selection-start-line="303" selection-start-column="41" selection-end-line="303" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1368#1369#0" expanded="true" />
             <element signature="e#1397#1398#0" expanded="true" />
+            <element signature="e#7044#7045#0" expanded="true" />
+            <element signature="e#7069#7070#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -504,30 +505,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw_ex4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="86" column="56" selection-start-column="2" selection-end-line="100" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/temp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
-          <caret line="57" column="24" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1340#1341#0" expanded="true" />
-            <element signature="e#1369#1370#0" expanded="true" />
-            <element signature="e#6765#6766#0" expanded="true" />
-            <element signature="e#6799#6800#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw_ex4.java" />
+    <entry file="file://$PROJECT_DIR$/src/temp.java" />
     <entry file="file://$PROJECT_DIR$/src/hw_ex3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
+        <state relative-caret-position="176">
           <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
