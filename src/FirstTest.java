@@ -325,8 +325,7 @@ public class FirstTest {
             );
     }
     @Test
-    public void testChangeScreenOrientationOnSearchResults()
-    {
+    public void testChangeScreenOrientationOnSearchResults() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
                 "Can't find 'Search Wikipedia' input",
@@ -381,6 +380,36 @@ public class FirstTest {
                 "Article title ave been changed after Rotation",
                 title_before_rotation,
                 title_after_2nd_rotation
+        );
+    }
+    @Test
+    public void testCheckSearchArticleInBackground()
+    {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                "Can't find 'Search Wikipedia' input",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text, 'Search…')]"),
+                "Java",
+                "Can't find search input",
+                5
+        );
+
+        waitForElementPresent(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Can't find 'Search Wikipedia' input",
+                5
+        );
+
+        driver.runAppInBackground(2);
+
+        waitForElementPresent(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Can't find article after returning from background",
+                5
         );
 
 
