@@ -84,7 +84,7 @@ public class MainPageObject {
         swipeUp(200);
     }
 
-    public void SwipeUptoFindElement(By by, String error_message, int max_swipes)
+    public void swipeUpToFindElement(By by, String error_message, int max_swipes)
     {
         int already_swiped = 0;
         while (driver.findElements(by).size() == 0)
