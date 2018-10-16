@@ -102,67 +102,30 @@ public class FirstTest extends CoreTestCase {
     @Test
     public void testAmountOfNotEmptySearch()
     {
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Can't find 'Search Wikipedia' input",
-                5
-        );
 
-          String search_line = "In Flames discography";
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                search_line,
-                "Can't find search input",
-                5
-        );
-          String search_result_locator = "//*[@resource-id='org.wikipedia:id/search_results_list']/*[@resource-id='org.wikipedia:id/page_list_item_container']";
-        MainPageObject.waitForElementPresent(
-                  By.xpath(search_result_locator),
-                  "Cannot find anything by the request" + search_line,
-                  15
-          );
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
+        String search_line = "In Flames discography";
+        SearchPageObject.typeSearchLine(search_line);
+        int amount_of_search_results = SearchPageObject.getAmountOfFoundArticles();
 
-          int amount_of_search_results = MainPageObject.getAmountOfElements(
-                  By.xpath(search_result_locator)
-          );
-
-          Assert.assertTrue(
+        Assert.assertTrue(
                   "Found few results!",
                   amount_of_search_results > 0
-          );
+        );
     }
 
     @Test
     public void testAmountOfEmptySearch()
     {
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Can't find 'Search Wikipedia' input",
-                5
-        );
-
-
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
         String search_line = "hsdflkhkdsf";
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                search_line,
-                "Can't find search input",
-                5
-        );
+        SearchPageObject.typeSearchLine(search_line);
+        SearchPageObject.waitForEmptyResultLabel();
+        SearchPageObject.assertThereIsNoResultOfSearch();
 
-        String search_result_locator = "//*[@resource-id='org.wikipedia:id/search_results_list']/*[@resource-id='org.wikipedia:id/page_list_item_container']";
-        String empty_result_label = "//*[@text = 'No results found']";
 
-        MainPageObject.waitForElementPresent(
-               By.xpath(empty_result_label),
-                "Cannot find empty result label by the request " + search_line,
-                15
-            );
-
-        MainPageObject.assertElementNotPresent(
-                    By.xpath(search_result_locator),
-                    "Some result found by the request" + search_line
-            );
     }
     @Test
     public void testChangeScreenOrientationOnSearchResults() {
