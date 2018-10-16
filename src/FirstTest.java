@@ -46,13 +46,14 @@ public class FirstTest extends CoreTestCase {
     public void testCompareArticleTitle()
     {
         SearchPageObject SearchPageObject = new SearchPageObject(driver);
+
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
         SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
 
         ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
-        String article_title = ArticlePageObject.getArticleTitle();
 
+        String article_title = ArticlePageObject.getArticleTitle();
         Assert.assertEquals(
                 "We see unexpected title!",
                 "Java (programming language)",
@@ -65,11 +66,13 @@ public class FirstTest extends CoreTestCase {
     public void testSwipeArticle()
     {
         SearchPageObject SearchPageObject = new SearchPageObject(driver);
+
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Appium");
         SearchPageObject.clickByArticleWithSubstring("Appium");
 
         ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+
         ArticlePageObject.waitForTitleElement();
         ArticlePageObject.swipeToFooter();
     }
@@ -78,13 +81,14 @@ public class FirstTest extends CoreTestCase {
     public void testSaveFirstArticleToMyList()
     {
         SearchPageObject SearchPageObject = new SearchPageObject(driver);
+
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
         SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
 
         ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
-        ArticlePageObject.waitForTitleElement();
 
+        ArticlePageObject.waitForTitleElement();
         String article_title = ArticlePageObject.getArticleTitle();
         String name_of_folder = "Learning programming";
 
@@ -95,6 +99,7 @@ public class FirstTest extends CoreTestCase {
         NavigationUI.clickMyLists();
 
         MyListsPageObject MyListsPageObject = new MyListsPageObject(driver);
+
         MyListsPageObject.openFolderByName(name_of_folder);
         MyListsPageObject.swipeByArticleToDelete(article_title);
     }
@@ -104,6 +109,7 @@ public class FirstTest extends CoreTestCase {
     {
 
         SearchPageObject SearchPageObject = new SearchPageObject(driver);
+
         SearchPageObject.initSearchInput();
         String search_line = "In Flames discography";
         SearchPageObject.typeSearchLine(search_line);
@@ -119,6 +125,7 @@ public class FirstTest extends CoreTestCase {
     public void testAmountOfEmptySearch()
     {
         SearchPageObject SearchPageObject = new SearchPageObject(driver);
+
         SearchPageObject.initSearchInput();
         String search_line = "hsdflkhkdsf";
         SearchPageObject.typeSearchLine(search_line);
@@ -128,42 +135,19 @@ public class FirstTest extends CoreTestCase {
 
     }
     @Test
-    public void testChangeScreenOrientationOnSearchResults() {
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Can't find 'Search Wikipedia' input",
-                5
-        );
+    public void testChangeScreenOrientationOnSearchResults()
+    {
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
 
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
 
-        String search_line = "Java";
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                search_line,
-                "Can't find search input",
-                5
-        );
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Cannot find 'Object-oriented programming language' topic searching by" + search_line,
-                15
-        );
+        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
 
-        String title_before_rotation = MainPageObject.waitForElementAndGetAttribute(
-                By.id("org.wikipedia:id/view_page_title_text"),
-                "text",
-                "Cannot find title of article",
-                15
-        );
-
-        driver.rotate(ScreenOrientation.LANDSCAPE);
-
-        String title_after_rotation = MainPageObject.waitForElementAndGetAttribute(
-                By.id("org.wikipedia:id/view_page_title_text"),
-                "text",
-                "Cannot find title of article",
-                15
-        );
+        String title_before_rotation = ArticlePageObject.getArticleTitle();
+        this.rotateScreenLandscape();
+        String title_after_rotation = ArticlePageObject.getArticleTitle();
 
         Assert.assertEquals(
                 "Article title ave been changed after Rotation",
@@ -171,48 +155,27 @@ public class FirstTest extends CoreTestCase {
                 title_after_rotation
         );
 
-        driver.rotate(ScreenOrientation.PORTRAIT);
+        this.rotateScreenPortrait();
 
-        String title_after_2nd_rotation = MainPageObject.waitForElementAndGetAttribute(
-                By.id("org.wikipedia:id/view_page_title_text"),
-                "text",
-                "Cannot find title of article",
-                15
-        );
+        String title_after_2nd_rotation = ArticlePageObject.getArticleTitle();
         Assert.assertEquals(
                 "Article title ave been changed after Rotation",
                 title_before_rotation,
                 title_after_2nd_rotation
         );
     }
+
+
     @Test
     public void testCheckSearchArticleInBackground()
     {
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Can't find 'Search Wikipedia' input",
-                5
-        );
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
 
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
-                "Can't find search input",
-                5
-        );
-
-        MainPageObject.waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Can't find 'Search Wikipedia' input",
-                5
-        );
-
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.waitForSearchResult("Object-oriented programming language");
+        this.backgroundApp(2);
         driver.runAppInBackground(2);
-
-        MainPageObject.waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Can't find article after returning from background",
-                5
-        );
+        SearchPageObject.waitForSearchResult("Object-oriented programming language");
     }
 }
