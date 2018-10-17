@@ -4,7 +4,7 @@ import lib.CoreTestCase;
 import lib.ui.SearchPageObject;
 import org.junit.Test;
 
-public class SearchTestts extends CoreTestCase
+public class SearchTests extends CoreTestCase
 {
     @Test
     public void testSearch()

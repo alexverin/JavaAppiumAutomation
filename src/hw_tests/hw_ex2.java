@@ -1,5 +1,6 @@
+package hw_tests;
+
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Before;
@@ -11,9 +12,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
-import java.util.List;
 
-public class hw_ex6 {
+// Ex2: Создание метода
+// Создание метода
+// Написать функцию, которая проверяет наличие текста “Search…” в строке поиска перед вводом текста и помечает тест упавшим, если такого текста нет.
+
+public class hw_ex2 {
 
     private AppiumDriver driver;
 
@@ -38,40 +42,18 @@ public class hw_ex6 {
         driver.quit();
     }
 
-// Ex6: Тест: assert title
-// Написать тест, который открывает статью и убеждается, что у нее есть элемент title.
-// Важно: тест не должен дожидаться появления title, проверка должна производиться сразу.
-// Если title не найден - тест падает с ошибкой.
-// Метод можно назвать assertElementPresent
-
     @Test
-    public void checkArticleTitleAvailability() throws InterruptedException
+    public void firstTest()
     {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
                 "Can't find 'Search Wikipedia' input",
                 5
         );
-        String search_input = "Appium";
-
-        waitForElementAndSendKeys(
+        waitForElementPresent(
                 By.xpath("//*[contains(@text, 'Search…')]"),
-                search_input,
                 "Can't find search input",
-                5
-        );
-
-        waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='" + search_input + "']"),
-                "Can't find '" +search_input+ "' topic searching by " + search_input,
                 15
-        );
-
-        Thread.sleep(5000);
-
-        assertElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/view_page_title_text']"),
-                " Can't find page title"
         );
     }
 
@@ -83,33 +65,10 @@ public class hw_ex6 {
                 ExpectedConditions.presenceOfElementLocated(by)
         );
     }
-
     private WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds)
     {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.click();
         return element;
-    }
-
-    private WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeoutInSeconds) {
-        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
-        element.sendKeys(value);
-        return element;
-    }
-
-    private int getAmountOfElements(By by)
-    {
-        List elements = driver.findElements(by);
-        return elements.size();
-
-    }
-
-    private void assertElementPresent(By by, String error_message)
-    {
-        int amount_of_elements = getAmountOfElements(by);
-        if (amount_of_elements == 0){
-            String default_message = "An element '" + by.toString() + "' is not found on the page";
-            throw new AssertionError(default_message + error_message);
-        }
     }
 }
