@@ -138,6 +138,14 @@ public class MainPageObject {
             throw new AssertionError(default_message + " " + error_message);
         }
     }
+
+    public void assertElementPresent(By by, String error_message) {
+        int amountOfElements = getAmountOfElements(by);
+        if (amountOfElements == 0) {
+            String defaultMessage = "An element '" + by.toString() + "' supposed to be present";
+            throw new AssertionError(defaultMessage + " " + error_message);
+        }
+    }
     public String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeoutInSeconds)
     {
         WebElement element = waitForElementPresent(by,error_message, timeoutInSeconds);

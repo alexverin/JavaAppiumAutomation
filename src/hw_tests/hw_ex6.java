@@ -1,7 +1,6 @@
 package hw_tests;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Before;
@@ -40,12 +39,13 @@ public class hw_ex6 {
         driver.quit();
     }
 
-// Ex6: Тест: assert title
-// Написать тест, который открывает статью и убеждается, что у нее есть элемент title.
-// Важно: тест не должен дожидаться появления title, проверка должна производиться сразу.
-// Если title не найден - тест падает с ошибкой.
-// Метод можно назвать assertElementPresent
-
+/** Ex6: Тест: assert title
+ Написать тест, который
+ * 1. Oткрывает статью и убеждается, что у нее есть элемент title.
+ * 2. Важно: тест не должен дожидаться появления title, проверка должна производиться сразу.
+ * 3. Если title не найден - тест падает с ошибкой.
+ * 4. Метод можно назвать assertElementPresent
+*/
     @Test
     public void checkArticleTitleAvailability() throws InterruptedException
     {

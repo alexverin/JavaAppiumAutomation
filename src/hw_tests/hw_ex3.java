@@ -38,6 +38,15 @@ public class hw_ex3 {
         driver.quit();
     }
 
+    /** Ex3: Тест: отмена поиска
+     * Написать тест, который:
+     * Ищет какое-то слово
+     * Убеждается, что найдено несколько статей
+     * Отменяет поиск
+     * Убеждается, что результат поиска пропал
+     */
+
+
     @Test
     public void testCancelResultOfSearchSeveralArticles(){
         waitForElementAndClick(By.xpath("//*[contains(@text,'Search Wikipedia')]"),

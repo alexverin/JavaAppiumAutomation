@@ -1,15 +1,12 @@
 package hw_tests;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -43,12 +40,11 @@ public class hw_ex4 {
         driver.quit();
     }
 
-    //Ex4*: Тест: проверка слов в поиске
-//        Написать тест, который:
-//
-//        Ищет какое-то слово
-//        Убеждается, что в каждом результате поиска есть это слово.
-
+    /** Ex4: Тест: проверка слов в поиске
+     * Написать тест, который:
+     * Ищет какое-то слово
+     * Убеждается, что в каждом результате поиска есть это слово.
+     */
     @Test
     public void testSearchResultsContainText() {
         waitForElementAndClick(

@@ -24,7 +24,6 @@ public class ArticlePageObject extends MainPageObject{
         super(driver);
     }
 
-
     public WebElement waitForTitleElement()
     {
         return this.waitForElementPresent(By.id(TITLE), "Can't find article title on page", 15);
@@ -33,6 +32,12 @@ public class ArticlePageObject extends MainPageObject{
     {
         WebElement title_element = waitForTitleElement();
         return title_element.getAttribute("text");
+    }
+
+    public void checkTitleElementImmediately() {
+        this.assertElementPresent(
+                By.id(TITLE),
+                "Cannot find article title immediately");
     }
 
     public void swipeToFooter()
@@ -81,6 +86,22 @@ public class ArticlePageObject extends MainPageObject{
         );
     }
 
+
+
+    public void addArticleToSavedList(String name_of_folder)
+    {
+        this.waitForElementAndClick(By.xpath(OPTIONS_BUTTON),
+                "cannot find button to open article options",
+                5);
+
+        this.waitForElementAndClick(By.xpath(OPTIONS_ADD_TO_MY_LIST_BUTTON),
+                "cannot find option 'add to reading list'",
+                5);
+
+        this.waitForElementAndClick(By.xpath("//*[@text ='" + name_of_folder + "']"),
+                "cannot find folder" + name_of_folder,
+                10);
+    }
     public void closeArticle()
     {
         this.waitForElementAndClick(

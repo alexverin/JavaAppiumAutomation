@@ -33,6 +33,7 @@ public class SearchPageObject extends MainPageObject {
     {
         this.waitForElementPresent(By.id(SEARCH_CANCEL_BUTTON), "Can't find Cancel button", 5);
     }
+
     public void waitForCancelButtonToDisappear()
     {
         this.waitForElementNotPresent(By.id(SEARCH_CANCEL_BUTTON), "Search Cancel button is still present", 5);
@@ -47,12 +48,14 @@ public class SearchPageObject extends MainPageObject {
     {
         this.waitForElementAndSendKeys(By.xpath(SEARCH_INPUT), search_line, "Can't find and type into search input", 5);
     }
+
     public void waitForSearchResult(String substring)
     {
         String search_result_xpath = getResultSearchElement(substring);
         this.waitForElementPresent(By.xpath(search_result_xpath), "Can't find search result with substring" + substring );
     }
-    public void   clickByArticleWithSubstring(String substring)
+
+    public void clickByArticleWithSubstring(String substring)
     {
         String search_result_xpath = getResultSearchElement(substring);
         this.waitForElementAndClick(By.xpath(search_result_xpath), "Can't find and click search result with substring" + substring, 10);
