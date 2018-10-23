@@ -33,11 +33,13 @@ public class CoreTestCase extends TestCase {
         super.tearDown();
     }
 
-    protected void rotateScreenPortrait() {
+    protected void rotateScreenPortrait()
+    {
         driver.rotate(ScreenOrientation.PORTRAIT);
     }
 
-    protected void rotateScreenLandscape() {
+    protected void rotateScreenLandscape()
+    {
         driver.rotate(ScreenOrientation.LANDSCAPE);
     }
 

@@ -67,7 +67,7 @@ public class hw_ex8 extends CoreTestCase {
         SearchPageObject.clickByArticleWithSubstring(secondSearch);
 
         ArticlePageObject.waitForTitleElement();
-        ArticlePageObject.addArticleToSavedList(name_of_folder);
+//        ArticlePageObject.addArticleToSavedList(name_of_folder);
         ArticlePageObject.closeArticle();
 
         NavigationUI NavigationUI = new NavigationUI(driver);
