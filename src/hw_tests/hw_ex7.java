@@ -23,7 +23,7 @@ public class hw_ex7 {
     public void setUp() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("platformName", "android");
         capabilities.setCapability("deviceName", "AndroidDevice");
         capabilities.setCapability("platformVersion", "8.0");
         capabilities.setCapability("AutomationName", "Appium");

@@ -2,9 +2,8 @@ package hw_tests;
 
 import lib.CoreTestCase;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
-
-import javax.tools.JavaCompiler;
 
 public class hw_ex9 extends CoreTestCase {
 
@@ -17,7 +16,7 @@ public class hw_ex9 extends CoreTestCase {
      * Например, для запроса “Java” одним из результатов выдачи будет “Java (Programming language)” и описание “Object-oriented programming language”.
      * Задача:
      * 1. Подобрать локатор, который находит результат поиска одновременно по заголовку и описанию (если заголовок или описание отличается - элемент не находится).
-     * 2. Добавить соответствующий метод в секцию TEMPLATES METHODS класса SearchPageObject.
+     * 2. Добавить соответствующий метод в секцию TEMPLATES METHODS класса SearchPageObjectFactory.
      * 3. В этот же класс добавить метод waitForElementByTitleAndDescription(String title, String description). Он должен дожидаться результата поиска по двум строкам - по заголовку и описанию.
      * Если такой элемент не появляется, тест должен упасть с читаемой и понятной ошибкой.
      * 4. Написать тест, который будет делать поиск по любому запросу на ваш выбор (поиск по этому слову должен возвращать как минимум 3 результата).
@@ -31,7 +30,7 @@ public class hw_ex9 extends CoreTestCase {
     @Test
     public void testSearchByTitleAndDescription()
     {
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
         int amount_of_search_result = SearchPageObject.getAmountOfFoundArticles();

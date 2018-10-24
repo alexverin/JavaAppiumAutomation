@@ -5,6 +5,7 @@ import lib.ui.ArticlePageObject;
 import lib.ui.MyListsPageObject;
 import lib.ui.NavigationUI;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 
@@ -23,7 +24,7 @@ public class hw_ex8 extends CoreTestCase {
     @Test
     public void testCancelResultOfSearchSeveralArticles()
     {
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
 
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Appium");
@@ -51,7 +52,7 @@ public class hw_ex8 extends CoreTestCase {
         String secondSearch = "IntelliJ IDEA";
         String name_of_folder = "Learning automation";
 
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
 
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine(firstSearch);
@@ -95,7 +96,7 @@ public class hw_ex8 extends CoreTestCase {
     public void testCheckArticleTitleAvailability()
     {
         String search_word = "Appium";
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine(search_word);
         SearchPageObject.clickByArticleWithSubstring(search_word);

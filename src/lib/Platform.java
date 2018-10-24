@@ -12,6 +12,24 @@ public class Platform {
     private static final String PLATFORM_ANDROID = "android";
     private static final String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
 
+
+    private static Platform instance;
+
+    private Platform()
+    {
+
+    }
+
+    public static Platform getInstance()
+    {
+        if (instance == null)
+        {
+            instance = new Platform();
+        }
+        return instance;
+    }
+
+
     public AppiumDriver getDriver() throws Exception
     {
         URL URL = new URL(APPIUM_URL);
@@ -42,7 +60,7 @@ public class Platform {
     private DesiredCapabilities getAndroidDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("platformName", "android");
         capabilities.setCapability("deviceName", "AndroidDevice");
         capabilities.setCapability("platformVersion", "8.0");
         capabilities.setCapability("AutomationName", "Appium");
@@ -56,9 +74,9 @@ public class Platform {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("platformName", "iOS");
-        capabilities.setCapability("deviceName", "iPhone X");
+        capabilities.setCapability("deviceName", "iPhone 7");
         capabilities.setCapability("platformVersion", "12.0");
-        capabilities.setCapability("app", "Users/alekseyverin/JAA_MY/apks/Wikipedia.app");
+        capabilities.setCapability("app", "/Users/alekseyverin/JAA_MY/apks/Wikipedia.app");
         return capabilities;
     }
 
