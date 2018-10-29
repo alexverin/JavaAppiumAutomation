@@ -8,7 +8,7 @@ public class iOSArticlePageObject extends ArticlePageObject {
     static {
         TITLE = "id:Java (programming language)";
         FOOTER_ELEMENT = "id:View article in browser";
-        OPTIONS_ADD_TO_MY_LIST_BUTTON = "id:Saver for later";
+        OPTIONS_ADD_TO_MY_LIST_BUTTON = "id:Save for later";
         CLOSE_ARTICLE_BUTTON = "id:Back";
     }
     public iOSArticlePageObject(AppiumDriver driver)
