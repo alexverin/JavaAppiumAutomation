@@ -10,7 +10,6 @@ import lib.ui.factories.ArticlePageObjectFactory;
 import lib.ui.factories.MyListsPageObjectFactory;
 import lib.ui.factories.NavigationUIFactory;
 import lib.ui.factories.SearchPageObjectFactory;
-import org.junit.Assert;
 import org.junit.Test;
 
 public class hw_ex11 extends CoreTestCase {

@@ -2,6 +2,9 @@ package lib.ui;
 
 
 import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 abstract public class SearchPageObject extends MainPageObject {
     protected static String
@@ -12,7 +15,8 @@ abstract public class SearchPageObject extends MainPageObject {
             SEARCH_RESULT_ELEMENT,
             SEARCH_EMPTY_RESULT_ELEMENT,
             SEARCH_RESULT_BY_TITLE_AND_DESCRIPTION_TPL,
-            SEARCH_CANCEL_MINI;
+            SEARCH_CANCEL_MINI,
+            SEARCH_RESULT_TITLE;
     public SearchPageObject(AppiumDriver driver) {
         super(driver);
     }
@@ -96,5 +100,9 @@ abstract public class SearchPageObject extends MainPageObject {
                 "Cannot find mini cross button",
                 5
         );
+    }
+    public List<WebElement> findAllResultsTitles()
+    {
+        return this.waitForAllElementsPresent(SEARCH_RESULT_TITLE,"Cannot find search results", 15);
     }
 }
