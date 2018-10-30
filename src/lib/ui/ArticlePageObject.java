@@ -14,11 +14,17 @@ abstract public class ArticlePageObject extends MainPageObject {
             ADD_TO_MY_LIST_OVERLAY,
             MY_LIST_NAME_INPUT,
             MY_LIST_OK_BUTTON,
-            CLOSE_ARTICLE_BUTTON;
+            CLOSE_ARTICLE_BUTTON,
+            ARTICLE_SUB_TITLE;
 
 
     public ArticlePageObject(AppiumDriver driver) {
         super(driver);
+    }
+
+    private static String getPageSubtitleTitle(String title)
+    {
+        return ARTICLE_SUB_TITLE.replace("{SUBSTRING}",title);
     }
 
     public WebElement waitForTitleElement() {
@@ -27,9 +33,9 @@ abstract public class ArticlePageObject extends MainPageObject {
 
     public String getArticleTitle() {
         WebElement title_element = waitForTitleElement();
-        if (Platform.getInstance().isAndroid()){
-            return title_element.getAttribute("text");}
-        else {
+        if (Platform.getInstance().isAndroid()) {
+            return title_element.getAttribute("text");
+        } else {
             return title_element.getAttribute("name");
         }
     }
@@ -39,10 +45,14 @@ abstract public class ArticlePageObject extends MainPageObject {
                 TITLE,
                 "Cannot find article title immediately");
     }
+    public void checkSubTitleElement() {
+        this.assertElementPresent(
+                ARTICLE_SUB_TITLE,
+                "Cannot find article subtitle");
+    }
 
     public void swipeToFooter() {
-        if (Platform.getInstance().isAndroid())
-        {
+        if (Platform.getInstance().isAndroid()) {
             this.swipeUpToFindElement(
                     FOOTER_ELEMENT,
                     "Cannot find the end of article",
@@ -92,12 +102,13 @@ abstract public class ArticlePageObject extends MainPageObject {
                 5
         );
     }
-public void addArticlesToMySaved(){
-    this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON,
-            "Can't find option to add article to reading list",
-            5
-    );
-}
+
+    public void addArticlesToMySaved() {
+        this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON,
+                "Can't find option to add article to reading list",
+                5
+        );
+    }
 
     //    public void addArticleToSavedList(String name_of_folder)
 //    {
@@ -121,5 +132,9 @@ public void addArticlesToMySaved(){
                 "Cannot close article, cannot find X button",
                 5
         );
+    }
+    public WebElement waitForKnownTitleElement(String title)
+    {
+        return this.waitForElementPresent(getPageSubtitleTitle(title), "Cannot find known article title on page", 20);
     }
 }

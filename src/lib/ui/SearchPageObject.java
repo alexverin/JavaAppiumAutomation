@@ -11,7 +11,8 @@ abstract public class SearchPageObject extends MainPageObject {
             SEARCH_RESULT_BY_SUBSTRING_TPL,
             SEARCH_RESULT_ELEMENT,
             SEARCH_EMPTY_RESULT_ELEMENT,
-            SEARCH_RESULT_BY_TITLE_AND_DESCRIPTION_TPL;
+            SEARCH_RESULT_BY_TITLE_AND_DESCRIPTION_TPL,
+            SEARCH_CANCEL_MINI;
     public SearchPageObject(AppiumDriver driver) {
         super(driver);
     }
@@ -87,5 +88,13 @@ abstract public class SearchPageObject extends MainPageObject {
     {
         String element_xpath = getElementXpathByTitleAndDescription(article_title, article_description);
         this.waitForElementPresent(element_xpath, "Cannot find result with title "+article_title+" and description "+article_description);
+    }
+    public void waitForClearSearchInput()
+    {
+        this.waitForElementAndClick(
+                SEARCH_CANCEL_MINI,
+                "Cannot find mini cross button",
+                5
+        );
     }
 }
